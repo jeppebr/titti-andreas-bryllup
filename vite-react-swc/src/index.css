@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
+
+/* @font-face {
+  font-family: 'Cedarville Cursive';
+  src: local('Cedarville Cursive'), url(./assets/fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf) format('ttf');
+}
+
+@font-face {
+  font-family: 'Satisfy';
+  src: local('Satisfy'), url(./assets/fonts/Satisfy/Satisfy-Regular.ttf) format('ttf');
+} */
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Satisfy';
+  src: url(./assets/fonts/Satisfy/Satisfy-Regular.ttf);
+} 
+
+@font-face {
+  font-family: 'CedarvilleCursiv';
+  src: url(./assets/fonts/Cedarville_Cursive/CedarvilleCursive-Regular.ttf);
+} 
+

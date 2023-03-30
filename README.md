@@ -4,7 +4,7 @@
 // npm create vite@latest
 // npm i vite-plugin-mkcert -D
 // npm i @vitejs/plugin-react-refresh
-// npm install -D tailwindcss
+// npm install -D tailwindcss postcss autoprefixer
 // npm i @sanity/client
 // npm i vite-plugin-pwa -D
 
@@ -25,7 +25,8 @@
 // https://www.youtube.com/watch?v=YSGLw4T8BgQ
 
 // Tailwind css
-// https://tailwindcss.com/docs/installation
+// https://tailwindcss.com/docs/guides/vite
+// https://stackoverflow.com/questions/60854215/tailwind-use-font-from-local-files-globally
 
 // How to run:
 // npm run dev

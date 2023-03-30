@@ -1,53 +1,37 @@
 import './App.css';
 
-import { useEffect, useState } from 'react';
+import { Outlet } from 'react-router-dom';
 
-import { client } from './components/client/client';
-
-interface Post {
-  title?: string;
-  slug?: string;
-  mainImage?: mainImage;
-}
-
-interface mainImage {
-  alt?: string;
-  asset?: asset;
-}
-
-interface asset {
-  _id?: number;
-  url?: string;
-}
+import { NavBar } from './components/nav-bar/nav-bar';
 
 function App() {
-  const [posts, setPosts] = useState<Post[]>();
-
-  //useEffect(() => {
-  // (async () => {
-  // const posts = await SanityService.getPosts()
-  // setPosts(posts);
-  // })
-  //} )
-
-  useEffect(() => {
-    client
-      .fetch(
-        `*[_type == "post"]{ title, slug, mainImage{ asset->{ _id, url}, alt}}`
-      )
-      .then((data) => setPosts(data));
-    console.log('called');
-  }, []);
-
   return (
     <>
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      {posts?.map((post, index) => (
-        <div key={index}>
-          <h1>{post?.title}</h1>
-          <img src={post?.mainImage?.asset?.url} alt={post?.mainImage?.alt} />
+      <h1 className="flex justify-center  text-4xl m-8 font-satisfy">
+        Titti og Andreas' Bryllup
+      </h1>
+
+      <NavBar />
+
+      <div className="relative">
+        <div className=" absolute bg-home h-96 w-full  bg-cover flex  justify-center items-center">
+          <h2 className="font-cedarvilleCursiv text-6xl"> En custom text </h2>
         </div>
-      ))}
+
+        <div className="mt-72 ml-24 absolute h-auto w-8/12  bg-stone-100  shadow-md hover:shadow-lg">
+          <h2 className="p-4 font-bold text-lg">en custom text</h2>
+          <p className="p-4"> some randome text</p>
+          <p className="p-4"> some randome text</p>
+
+          <p className="p-4"> some randome text</p>
+
+          <p className="p-4"> some randome text</p>
+
+          <p className="p-4"> some randome text</p>
+
+          <Outlet />
+        </div>
+      </div>
     </>
   );
 }
